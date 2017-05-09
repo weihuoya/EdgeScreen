@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.weihuoya.edgescreen">
+
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="com.samsung.android.app.cocktailbarservice.permission.ACCESS_PANEL"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/SettingsTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.samsung.android.edge.hide_edge_screen_handle" android:value="true"/>
+        </activity>
+
+        <receiver android:name=".cocktail.FeedsPanelProvider">
+            <intent-filter>
+                <action android:name="com.samsung.android.cocktail.v2.action.COCKTAIL_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="com.samsung.android.cocktail.provider"
+                android:resource="@xml/edge_feeds_panel" />
+        </receiver>
+
+        <receiver android:name=".cocktail.SinglePlusProvider">
+            <intent-filter>
+                <action android:name="com.samsung.android.cocktail.action.COCKTAIL_ENABLED"/>
+                <action android:name="com.samsung.android.cocktail.action.COCKTAIL_DISABLED"/>
+                <action android:name="com.samsung.android.cocktail.action.COCKTAIL_VISIBILITY_CHANGED"/>
+                <action android:name="com.samsung.android.cocktail.action.COCKTAIL_DROPED"/>
+                <action android:name="com.samsung.android.cocktail.action.COCKTAIL_UPDATE_FEEDS"/>
+                <action android:name="com.samsung.android.cocktail.v2.action.COCKTAIL_UPDATE"/>
+
+                <action android:name="com.weihuoya.edgescreen.cocktail.action.ACTION_PULL_TO_REFRESH"/>
+                <action android:name="com.weihuoya.edgescreen.cocktail.action.ACTION_REMOTE_LONGCLICK"/>
+                <action android:name="com.weihuoya.edgescreen.cocktail.action.ACTION_REMOTE_CLICK"/>
+            </intent-filter>
+            <meta-data
+                android:name="com.samsung.android.cocktail.provider"
+                android:resource="@xml/edge_single_plus" />
+        </receiver>
+
+        <provider
+            android:name=".weather.WeatherContentProvider"
+            android:authorities="com.weihuoya.weather.WeatherContentProvider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+    </application>
+</manifest>

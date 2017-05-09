@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Edge Screen</string>
+    <string name="feeds_panel_name">Feeds</string>
+    <string name="feeds_panel_desc">Edge Feeds Description</string>
+    <string name="single_plus_name">Single</string>
+    <string name="single_plus_desc">Single Plus Description</string>
+</resources>

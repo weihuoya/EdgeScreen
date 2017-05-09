@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="SettingsTheme" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+</resources>

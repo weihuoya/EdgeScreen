@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cocktail-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    previewImage="@drawable/preview_single_plus"
+    label="@string/single_plus_name"
+    description="@string/single_plus_desc"
+    cocktailWidth="550"
+    configure="com.weihuoya.edgescreen.MainActivity">
+</cocktail-provider>
