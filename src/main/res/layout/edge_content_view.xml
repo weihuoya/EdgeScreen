@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#55ffffff"
-    android:id="@+id/single_list_view"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#33ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ProgressBar
-        android:layout_gravity="center"
-        android:id="@+id/update_progress"
-        android:visibility="invisible"
-        android:drawingCacheQuality="high"
-        android:duplicateParentState="true"
-        android:layout_width="16.0dip"
-        android:layout_height="16.0dip"
-        android:indeterminate="true"
-        android:indeterminateOnly="true"
-        android:indeterminateBehavior="repeat"
-        android:autoStart="true"
-        android:indeterminateTint="@android:color/white"
-        android:indeterminateTintMode="src_atop"
-        style="?android:attr/progressBarStyleSmall" />
-
-    <TextView
-        android:id="@+id/content_text"
-        android:textColor="@android:color/white"
+    <ListView
+        android:id="@+id/edge_content_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"
+        android:longClickable="true" />
 
-</LinearLayout>
+</FrameLayout>

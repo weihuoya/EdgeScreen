@@ -57,6 +57,10 @@ public class WeatherRequest extends StringRequest {
             content = new String(response.data, StandardCharsets.UTF_8);
         }
 
+        if(content.startsWith("<")) {
+            return Response.error(new ParseError());
+        }
+
         return Response.success(content, HttpHeaderParser.parseCacheHeaders(response));
     }
 

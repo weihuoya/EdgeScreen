@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">Edge Screen</string>
-    <string name="feeds_panel_name">Feeds</string>
-    <string name="feeds_panel_desc">Edge Feeds Description</string>
     <string name="single_plus_name">Single</string>
     <string name="single_plus_desc">Single Plus Description</string>
+
+    <string name="action_name_none">错误</string>
+    <string name="action_name_youdao">有道</string>
+    <string name="action_name_wgeo">定位</string>
+    <string name="action_name_calllog">通话记录</string>
+    <string name="action_name_sms">短信</string>
+    <string name="action_name_system">系统</string>
+    <string name="action_name_sk2d">天气</string>
+    <string name="action_name_wap40d">详情</string>
+
 </resources>

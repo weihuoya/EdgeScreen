@@ -1,6 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        zhangwei {
+            storeFile file('E:/Android/android-release-sign/bboo-release-key.jks')
+            storePassword 'zhangwei'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "25.0.2"
     defaultConfig {

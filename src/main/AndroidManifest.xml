@@ -10,6 +10,8 @@
 
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -17,23 +19,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/SettingsTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <meta-data android:name="com.samsung.android.edge.hide_edge_screen_handle" android:value="true"/>
+            <intent-filter>
+                <action android:name="com.samsung.android.support.executable" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.INSIGHT_SEARCH" />
+                <action android:name="com.samsung.android.intent.action.SEARCH"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.weihuoya.edgescreen.EXECUTABLE" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+            <meta-data android:name="com.samsung.android.edge.hide_edge_screen_handle" android:value="true" />
         </activity>
 
-        <receiver android:name=".cocktail.FeedsPanelProvider">
-            <intent-filter>
-                <action android:name="com.samsung.android.cocktail.v2.action.COCKTAIL_UPDATE"/>
-            </intent-filter>
-            <meta-data
-                android:name="com.samsung.android.cocktail.provider"
-                android:resource="@xml/edge_feeds_panel" />
-        </receiver>
-
-        <receiver android:name=".cocktail.SinglePlusProvider">
+        <receiver android:name=".cocktail.EdgePanelProvider">
             <intent-filter>
                 <action android:name="com.samsung.android.cocktail.action.COCKTAIL_ENABLED"/>
                 <action android:name="com.samsung.android.cocktail.action.COCKTAIL_DISABLED"/>
@@ -51,11 +56,24 @@
                 android:resource="@xml/edge_single_plus" />
         </receiver>
 
+        <service
+            android:name=".cocktail.EdgeContentListService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <service
+            android:name=".cocktail.EdgeHelpGridService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <provider
             android:name=".weather.WeatherContentProvider"
             android:authorities="com.weihuoya.weather.WeatherContentProvider"
             android:enabled="true"
             android:exported="true">
         </provider>
+
+        <meta-data android:name="com.samsung.android.support.executable" android:resource="@xml/executable"/>
+
     </application>
 </manifest>

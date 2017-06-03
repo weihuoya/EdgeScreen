@@ -125,7 +125,7 @@ public final class SlookCocktailManager {
                 component);
     }
 
-    // force verify samsung signature and package name in
+    // force verified samsung signature and package name in
     // com.samsung.android.app.cocktailbarservice.ui.panel.AbstractRemotePanelView.composeCocktailWithLoadableInfo()
     // com.samsung.android.app.cocktailbarservice.util.CocktailWhiteLists.isAllowedToUseClassLoader()
     public void updateCocktail(int cocktailId, Class panelClass, Bundle content, RemoteViews contentView) {
@@ -166,6 +166,7 @@ public final class SlookCocktailManager {
         return mCocktailBarManager.getCocktailBarWindowType();
     }
 
+    // permission system app
     public void setLongPressEnabled(boolean enabled) {
         mCocktailBarManager.updateLongpressGesture(enabled);
     }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable android:label="@string/app_name"
+    android:icon="@drawable/edge_icon"
+    android:hint="@string/app_name"
+    android:searchMode="queryRewriteFromData"
+    android:searchSuggestAuthority="com.weihuoya.weather.WeatherContentProvider"
+    android:searchSuggestSelection=" ?"
+    android:searchSuggestIntentAction="android.intent.action.VIEW"
+    android:inputType="textUri"
+    android:voiceSearchMode="launchWebSearch|showVoiceSearchButton"
+    android:imeOptions="actionGo"
+    android:includeInGlobalSearch="false"
+    android:searchSettingsDescription="@string/app_name"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <extra-attr android:name="includeInInsightSearch" android:value="true" />
+    <extra-attr android:name="searchLayoutStyle" android:value="suggest_template_history_web" />
+    <extra-attr android:name="advancedSearchType" android:value="timeSpan" />
+
+</searchable>
+
+
+
+<!--
+public static final String TEMPLATE_TYPE_APPLICATION = "suggest_template_application";
+public static final String TEMPLATE_TYPE_APPS_STORE = "suggest_template_apps_store";
+public static final String TEMPLATE_TYPE_APPS_STORE_LIST = "suggest_template_apps_store_list";
+public static final String TEMPLATE_TYPE_BROWSER = "suggest_template_history_web";
+public static final String TEMPLATE_TYPE_CONTACT = "suggest_template_contact";
+public static final String TEMPLATE_TYPE_DEFAULT = "suggest_template_default";
+public static final String TEMPLATE_TYPE_EMAIL = "suggest_template_email";
+public static final String TEMPLATE_TYPE_GALLERY = "suggest_template_content_image";
+public static final String TEMPLATE_TYPE_MEMO = "suggest_template_memo";
+public static final String TEMPLATE_TYPE_MESSAGE = "suggest_template_message";
+public static final String TEMPLATE_TYPE_MUSIC = "suggest_template_content_music";
+public static final String TEMPLATE_TYPE_MYFILES = "suggest_template_content_file";
+public static final String TEMPLATE_TYPE_NOTE = "suggest_template_note";
+public static final String TEMPLATE_TYPE_NOTE_LIST = "suggest_template_note_list";
+public static final String TEMPLATE_TYPE_NOTE_V5 = "suggest_template_note_v5";
+public static final String TEMPLATE_TYPE_PERMISSION_NOTICE = "suggest_template_permission_notice";
+public static final String TEMPLATE_TYPE_PHONE = "suggest_template_history_call";
+public static final String TEMPLATE_TYPE_PINALL = "suggest_template_pinall";
+public static final String TEMPLATE_TYPE_PLANNER = "suggest_template_planner";
+public static final String TEMPLATE_TYPE_QUICKMEMO = "suggest_template_ink_memo";
+public static final String TEMPLATE_TYPE_QUICK_CONNECT = "suggest_template_quick_connect";
+public static final String TEMPLATE_TYPE_SETTINGS = "suggest_template_settings";
+public static final String TEMPLATE_TYPE_STORYALBUM = "suggest_template_coverpage";
+public static final String TEMPLATE_TYPE_SUGGESTION_APPS = "suggest_template_suggestion_apps";
+public static final String TEMPLATE_TYPE_SUGGESTION_DEVICES = "suggest_template_suggestion_device";
+public static final String TEMPLATE_TYPE_SUGGESTION_PEOPLE = "suggest_template_suggestion_people";
+public static final String TEMPLATE_TYPE_VIDEO = "suggest_template_content_video";
+public static final String TEMPLATE_TYPE_VNOTE = "suggest_template_content_voice";
+public static final String TEMPLATE_TYPE_WEB_LINK = "suggest_template_web_link";
+
+
+public static final String QUERY = "query";
+public static final String SEARCH_MODE = "search_mode";
+public static final String SEM_SUGGEST_PARAMETER_END_TIME = "etime";
+public static final String SEM_SUGGEST_PARAMETER_START_TIME = "stime";
+public static final String SEM_SUGGEST_URI_PATH_REGEX_QUERY = "search_suggest_regex_query";
+public static final String SHORTCUT_MIME_TYPE = "vnd.android.cursor.item/vnd.android.search.suggest";
+public static final String SUGGEST_MIME_TYPE = "vnd.android.cursor.dir/vnd.android.search.suggest";
+public static final String SUGGEST_NEVER_MAKE_SHORTCUT = "_-1";
+public static final String SUGGEST_PARAMETER_LIMIT = "limit";
+public static final String SUGGEST_URI_PATH_QUERY = "search_suggest_query";
+public static final String SUGGEST_URI_PATH_SHORTCUT = "search_suggest_shortcut";
+
+public static final String SEM_SUGGEST_COLUMN_EXTRA = "suggest_extra_flags";
+public static final String SEM_SUGGEST_COLUMN_GROUP = "suggest_group";
+
+public static final String SUGGEST_COLUMN_ICON_1 = "suggest_icon_1";
+public static final String SUGGEST_COLUMN_ICON_2 = "suggest_icon_2";
+public static final String SEM_SUGGEST_COLUMN_ICON_3 = "suggest_icon_3";
+public static final String SEM_SUGGEST_COLUMN_ICON_4 = "suggest_icon_4";
+public static final String SEM_SUGGEST_COLUMN_ICON_1_BLOB = "suggest_icon_1_blob";
+
+public static final String SEM_SUGGEST_COLUMN_INK_DATA = "suggest_ink_data";
+public static final String SEM_SUGGEST_COLUMN_MIME_TYPE = "suggest_mime_type";
+public static final String SEM_SUGGEST_COLUMN_TARGET_TYPE = "suggest_target_type";
+
+public static final String SUGGEST_COLUMN_TEXT_1 = "suggest_text_1";
+public static final String SUGGEST_COLUMN_TEXT_2 = "suggest_text_2";
+public static final String SEM_SUGGEST_COLUMN_TEXT_3 = "suggest_text_3";
+public static final String SEM_SUGGEST_COLUMN_TEXT_4 = "suggest_text_4";
+public static final String SEM_SUGGEST_COLUMN_TEXT_5 = "suggest_text_5";
+
+public static final String SEM_SUGGEST_COLUMN_URI = "suggest_uri";
+
+public static final String SUGGEST_COLUMN_AUDIO_CHANNEL_CONFIG = "suggest_audio_channel_config";
+public static final String SUGGEST_COLUMN_CONTENT_TYPE = "suggest_content_type";
+public static final String SUGGEST_COLUMN_DURATION = "suggest_duration";
+public static final String SUGGEST_COLUMN_FLAGS = "suggest_flags";
+public static final String SUGGEST_COLUMN_FORMAT = "suggest_format";
+
+public static final String SUGGEST_COLUMN_INTENT_ACTION = "suggest_intent_action";
+public static final String SUGGEST_COLUMN_INTENT_DATA = "suggest_intent_data";
+public static final String SUGGEST_COLUMN_INTENT_DATA_ID = "suggest_intent_data_id";
+public static final String SUGGEST_COLUMN_INTENT_EXTRA_DATA = "suggest_intent_extra_data";
+
+public static final String SUGGEST_COLUMN_IS_LIVE = "suggest_is_live";
+public static final String SUGGEST_COLUMN_LAST_ACCESS_HINT = "suggest_last_access_hint";
+public static final String SUGGEST_COLUMN_PRODUCTION_YEAR = "suggest_production_year";
+public static final String SUGGEST_COLUMN_PURCHASE_PRICE = "suggest_purchase_price";
+public static final String SUGGEST_COLUMN_QUERY = "suggest_intent_query";
+
+public static final String SUGGEST_COLUMN_RATING_SCORE = "suggest_rating_score";
+public static final String SUGGEST_COLUMN_RATING_STYLE = "suggest_rating_style";
+public static final String SUGGEST_COLUMN_RENTAL_PRICE = "suggest_rental_price";
+public static final String SUGGEST_COLUMN_RESULT_CARD_IMAGE = "suggest_result_card_image";
+public static final String SUGGEST_COLUMN_SHORTCUT_ID = "suggest_shortcut_id";
+public static final String SUGGEST_COLUMN_SPINNER_WHILE_REFRESHING = "suggest_spinner_while_refreshing";
+
+public static final String SUGGEST_COLUMN_TEXT_2_URL = "suggest_text_2_url";
+
+public static final String SUGGEST_COLUMN_VIDEO_HEIGHT = "suggest_video_height";
+public static final String SUGGEST_COLUMN_VIDEO_WIDTH = "suggest_video_width";
+-->

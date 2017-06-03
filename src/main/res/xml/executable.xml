@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <command android:label="@string/app_name"
+        android:icon="@drawable/edge_icon"
+        android:enabled="true"
+        android:tag="\ 2579229649"
+        android:smallIcon="@drawable/edge_icon">
+        <extras-attr android:name="type" android:value="activity" />
+        <extras-attr android:name="action" android:value="com.weihuoya.edgescreen.EXECUTABLE" />
+        <extras-attr android:name="packageName" android:value="com.weihuoya.edgescreen" />
+        <extras-attr android:name="componentName" android:value="com.weihuoya.edgescreen.MainActivity" />
+        <extras-attr android:name="launchMode" android:value="newTask" />
+        <extras-attr android:name="extras" android:value="edge" android:key="shouldNotIgnore" />
+    </command>
+
+</executable>
